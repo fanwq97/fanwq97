@@ -4,15 +4,26 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>物理日志与逻辑日志 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="日志主要分为逻辑日志以及物理日志：  逻辑日志 Logic log[1]； 物理日志 Physical log[2]；  1. 物理日志与逻辑日志的存储内容1.1 Physical Logging物理日志与逻辑日志在存储内容上有很大的区别，存储内容是区分它们的最重要手段。 物理日志：  存储内容：存储数据库中特定记录的变更，通常是 page oriented，即描述具体某一个 page 的修改操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="物理日志与逻辑日志">
+<meta property="og:url" content="http://example.com/2021/11/08/%E7%89%A9%E7%90%86%E6%97%A5%E5%BF%97%E4%B8%8E%E9%80%BB%E8%BE%91%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="日志主要分为逻辑日志以及物理日志：  逻辑日志 Logic log[1]； 物理日志 Physical log[2]；  1. 物理日志与逻辑日志的存储内容1.1 Physical Logging物理日志与逻辑日志在存储内容上有很大的区别，存储内容是区分它们的最重要手段。 物理日志：  存储内容：存储数据库中特定记录的变更，通常是 page oriented，即描述具体某一个 page 的修改操作">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://spongecaptain.cool/images/img_database/image-20210211140730813.png">
+<meta property="og:image" content="https://spongecaptain.cool/images/img_database/image-20210211143647850.png">
+<meta property="og:image" content="https://spongecaptain.cool/images/img_database/image-20210211150830617.png">
+<meta property="og:image" content="https://spongecaptain.cool/images/img_database/image-20210211160819039.png">
+<meta property="og:image" content="https://spongecaptain.cool/images/img_database/image-20210211161426303.png">
+<meta property="og:image" content="https://spongecaptain.cool/images/img_database/redo_insert.png">
+<meta property="article:published_time" content="2021-11-08T06:54:49.000Z">
+<meta property="article:modified_time" content="2021-11-08T06:55:00.405Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://spongecaptain.cool/images/img_database/image-20210211140730813.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,9 +80,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-物理日志与逻辑日志" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-物理日志与逻辑日志" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/11/08/%E7%89%A9%E7%90%86%E6%97%A5%E5%BF%97%E4%B8%8E%E9%80%BB%E8%BE%91%E6%97%A5%E5%BF%97/" class="article-date">
   <time class="dt-published" datetime="2021-11-08T06:54:49.000Z" itemprop="datePublished">2021-11-08</time>
@@ -84,8 +93,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/08/%E7%89%A9%E7%90%86%E6%97%A5%E5%BF%97%E4%B8%8E%E9%80%BB%E8%BE%91%E6%97%A5%E5%BF%97/">物理日志与逻辑日志</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      物理日志与逻辑日志
     </h1>
   
 
@@ -424,206 +433,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-MySQL-Binlog日志" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/05/MySQL-Binlog%E6%97%A5%E5%BF%97/" class="article-date">
-  <time class="dt-published" datetime="2021-11-05T10:19:25.000Z" itemprop="datePublished">2021-11-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/05/MySQL-Binlog%E6%97%A5%E5%BF%97/">MySQL Binlog日志</a>
-    </h1>
+    <a href="/2021/11/05/MySQL-Binlog%E6%97%A5%E5%BF%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MySQL Binlog日志</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Binlog-记录模式"><a href="#Binlog-记录模式" class="headerlink" title="Binlog 记录模式"></a>Binlog 记录模式</h2><p>Redo Log 是属于InnoDB引擎所特有的日志，而MySQL Server也有自己的日志，即 Binary log（二进制日志），简称Binlog。</p>
-<p>Binlog是记录所有数据库表结构变更以及表数据修改的二进制日志，不会记录SELECT和SHOW这类操作。</p>
-<p>Binlog日志是以事件形式记录，还包含语句所执行的消耗时间。</p>
-<p>开启Binlog日志有以下两个最重要的使用场景。</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主从复制：在主库中开启<span class="keyword">Binlog功能，这样主库就可以把Binlog传递给从库，从库拿到Binlog后实现数据恢复达到主从数据一致性。</span></span><br><span class="line"><span class="keyword"></span>数据恢复：通过mysqlbinlog工具来恢复数据。</span><br></pre></td></tr></table></figure>
-
-<p>Binlog文件名默认为“主机名_binlog-序列号”格式，例如oak_binlog-000001，也可以在配置文件中指定名称。</p>
-<p>文件记录模式有STATEMENT、ROW和MIXED三种，具体含义如下。</p>
-<ul>
-<li><strong>ROW（row-based replication, RBR）</strong></li>
-</ul>
-<p>日志中会记录每一行数据被修改的情况，然后在slave端对相同的数据进行修改。</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">优点：能清楚记录每一个行数据的修改细节，能完全实现主从数据同步和数据的恢复。</span><br><span class="line">缺点：批量操作，会产生大量的日志，尤其是<span class="keyword">alter</span> <span class="keyword">table</span>会让日志暴涨。</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>STATMENT（statement-based replication, SBR）</strong></li>
-</ul>
-<p>每一条被修改数据的SQL都会记录到master的Binlog中，slave在复制的时候SQL进程会解析成和原来master端执行过的相同的SQL再次执行。简称SQL语句复制。</p>
-<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">优点：日志量小，减少磁盘<span class="variable">IO</span>，提升存储和恢复速度</span><br><span class="line">缺点：在某些情况下会导致主从数据不一致，比如<span class="function"><span class="title">last_insert_id</span>()、<span class="title"><span class="built_in">now</span></span>()等函数。</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>MIXED（mixed-based replication, MBR）</strong></li>
-</ul>
-<p>以上两种模式的混合使用，一般会使用 STATEMENT 模式保存binlog，对于STATEMENT模式无法复制的操作使用 ROW 模式保存binlog，MySQL会根据执行的SQL语句选择写入模式。</p>
-<h2 id="Binlog-写入机制"><a href="#Binlog-写入机制" class="headerlink" title="Binlog 写入机制"></a>Binlog 写入机制</h2><p>常用的log event有：Query event、Row event、Xid event等。binlog文件的内容就是各种Log event的集合。</p>
-<ul>
-<li>根据记录模式和操作触发event事件生成log event（事件触发执行机制）</li>
-<li>将事务执行过程中产生log event写入缓冲区，每个事务线程都有一个缓冲区</li>
-</ul>
-<blockquote>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Log</span> Event保存在一个binlog_cache_mngr数据结构中，在该结构中有两个缓冲区，一个是stmt_cache，用于存放不支持事务的信息；另一个是trx_cache，用于存放支持事务的信息。</span><br></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>事务在提交阶段会将产生的log event写入到外部binlog文件中。</li>
-</ul>
-<blockquote>
-<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不同事务以串行方式将<span class="keyword">log</span> <span class="keyword">event</span>写入binlog文件中，所以一个事务包含的<span class="keyword">log</span> <span class="keyword">event</span>信息在binlog文件中是连续的，中间不会插入其他事务的<span class="keyword">log</span> <span class="keyword">event</span>。</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="Binlog-文件操作"><a href="#Binlog-文件操作" class="headerlink" title="Binlog 文件操作"></a>Binlog 文件操作</h2><p><strong>Binlog状态查看</strong></p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show <span class="keyword">variables</span> like <span class="comment">&#x27;log_bin&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>开启Binlog功能</strong><br>需要修改my.cnf或my.ini配置文件，在[mysqld]下面增加log_bin=mysql_bin_log，重启MySQL服务。</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#log-bin=ON </span></span><br><span class="line"><span class="comment">#log-bin-basename=mysqlbinlog </span></span><br><span class="line"><span class="attr">binlog-format</span>=ROW </span><br><span class="line"><span class="attr">log-bin</span>=mysqlbinlog</span><br></pre></td></tr></table></figure>
-
-<p>执行开启语句</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">set</span> global <span class="attribute">log_bin</span>=mysqllogbin;</span><br></pre></td></tr></table></figure>
-
-<p><strong>使用show binlog events命令</strong></p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">show binary logs; <span class="regexp">//</span>等价于show master logs; </span><br><span class="line">show master status; </span><br><span class="line">show binlog events; </span><br><span class="line">show binlog events <span class="keyword">in</span> <span class="string">&#x27;mysqlbinlog.000001&#x27;</span>\G;</span><br><span class="line">结果:</span><br><span class="line">     Log_name: mysql_bin.<span class="number">000001</span>   <span class="regexp">//</span>此条log存在那个文件中</span><br><span class="line">        Pos: <span class="number">174</span>                 <span class="regexp">//</span>log在bin-log中的开始位置 </span><br><span class="line">     Event_type: Intvar          <span class="regexp">//</span>log的类型信息 </span><br><span class="line">        Server_id: <span class="number">1</span>  <span class="regexp">//</span>可以查看配置中的server_id,表示log是那个服务器产生 </span><br><span class="line">     End_log_pos: <span class="number">202</span>          <span class="regexp">//</span>log在bin-log中的结束位置 </span><br><span class="line">        Info: INSERT_ID=<span class="number">2</span>    <span class="regexp">//</span>log的一些备注信息，可以直观的看出进行了什么操作 </span><br></pre></td></tr></table></figure>
-
-<p>可以用mysql自带的工具mysqlbinlog</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mysqlbinlog</span> <span class="string">&quot;文件名&quot;</span> mysqlbinlog <span class="string">&quot;文件名&quot;</span> &gt; <span class="string">&quot;文件名比如:test.sql&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>使用 binlog 恢复数据</strong></p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//按指定时间恢复 </span></span><br><span class="line">mysqlbinlog --start-datetime=<span class="string">&quot;2020-04-25 18:00:00&quot;</span> --stop-datetime=<span class="string">&quot;2020-04-26 00:00:00&quot;</span> mysqlbinlog<span class="number">.000002</span> | mysql -uroot -p1234 </span><br><span class="line"><span class="comment">//按事件位置号恢复 </span></span><br><span class="line">mysqlbinlog --start-position=<span class="number">154</span> --stop-position=<span class="number">957</span> mysqlbinlog<span class="number">.000002</span> | mysql -uroot -p1234</span><br></pre></td></tr></table></figure>
-
-<p>mysqldump：定期全部备份数据库数据。mysqlbinlog: 可以做增量备份和恢复操作。</p>
-<p><strong>删除Binlog文件</strong></p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">purge binary logs to <span class="string">&#x27;mysqlbinlog.000001&#x27;</span>; <span class="regexp">//</span>删除指定文件 </span><br><span class="line">purge binary logs before <span class="string">&#x27;2020-04-28 00:00:00&#x27;</span>; <span class="regexp">//</span>删除指定时间之前的文件 </span><br><span class="line">reset master; <span class="regexp">//</span>清除所有文件</span><br></pre></td></tr></table></figure>
-
-<p>可以通过设置expire_logs_days参数来启动自动清理功能。默认值为0表示没启用。设置为1表示超出1天binlog文件会自动删除掉</p>
-<h2 id="Redo-Log和-Binlog-区别"><a href="#Redo-Log和-Binlog-区别" class="headerlink" title="Redo Log和 Binlog 区别"></a>Redo Log和 Binlog 区别</h2><ul>
-<li>Redo Log是属于InnoDB引擎功能，Binlog是属于MySQL Server自带功能，并且是以二进制文件记录。</li>
-<li>Redo Log属于物理日志，记录该数据页更新状态内容，Binlog是逻辑日志，记录更新过程。</li>
-<li>Redo Log日志是循环写，日志空间大小是固定，Binlog是追加写入，写完一个写下一个，不会覆盖使用。</li>
-<li>Redo Log作为服务器异常宕机后事务数据自动恢复使用，Binlog可以作为主从复制和数据恢复使用。Binlog没有自动crash-safe能力。</li>
-</ul>
-<p>(<strong>crash-safe</strong> 即在 InnoDB 存储引擎中，事务提交过程中任何阶段，MySQL突然奔溃，重启后都能保证事务的完整性，已提交的数据不会丢失，未提交完整的数据会自动进行回滚。这个能力依赖的就是redo log和unod log两个日志。)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/05/MySQL-Binlog%E6%97%A5%E5%BF%97/" data-id="ckvqb8gsp00008amd3mks201p" data-title="MySQL Binlog日志" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-my-2-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/04/my-2-blog/" class="article-date">
-  <time class="dt-published" datetime="2021-11-04T04:44:48.000Z" itemprop="datePublished">2021-11-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/04/my-2-blog/">my 2 blog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/04/my-2-blog/" data-id="ckvqb8gsu00028amdfg73bwr5" data-title="my 2 blog" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/04/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-11-04T03:20:33.568Z" itemprop="datePublished">2021-11-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/04/hello-world/" data-id="ckvqb8gst00018amdgz1o4b6z" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>

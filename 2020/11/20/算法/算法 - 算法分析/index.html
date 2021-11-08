@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="算法 - 算法分析  算法 - 算法分析 数学模型 1. 近似 2. 增长数量级 3. 内循环 4. 成本模型   注意事项 1. 大常数 2. 缓存 3. 对最坏情况下的性能的保证 4. 随机化算法 5. 均摊分析   ThreeSum 1. ThreeSumSlow 2. ThreeSumBinarySearch 3. ThreeSumTwoPointer   倍率实验    数学模型1. 近">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/11/20/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%20-%20%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="算法 - 算法分析  算法 - 算法分析 数学模型 1. 近似 2. 增长数量级 3. 内循环 4. 成本模型   注意事项 1. 大常数 2. 缓存 3. 对最坏情况下的性能的保证 4. 随机化算法 5. 均摊分析   ThreeSum 1. ThreeSumSlow 2. ThreeSumBinarySearch 3. ThreeSumTwoPointer   倍率实验    数学模型1. 近">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-19T17:55:16.000Z">
+<meta property="article:modified_time" content="2020-11-19T17:55:16.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-算法/算法 - 算法分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/11/20/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%20-%20%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2020-11-19T17:55:16.000Z" itemprop="datePublished">2020-11-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="算法-算法分析"><a href="#算法-算法分析" class="headerlink" title="算法 - 算法分析"></a>算法 - 算法分析</h1><!-- GFM-TOC -->
+<ul>
+<li><a href="#%E7%AE%97%E6%B3%95---%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90">算法 - 算法分析</a><ul>
+<li><a href="#%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B">数学模型</a><ul>
+<li><a href="#1-%E8%BF%91%E4%BC%BC">1. 近似</a></li>
+<li><a href="#2-%E5%A2%9E%E9%95%BF%E6%95%B0%E9%87%8F%E7%BA%A7">2. 增长数量级</a></li>
+<li><a href="#3-%E5%86%85%E5%BE%AA%E7%8E%AF">3. 内循环</a></li>
+<li><a href="#4-%E6%88%90%E6%9C%AC%E6%A8%A1%E5%9E%8B">4. 成本模型</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</a><ul>
+<li><a href="#1-%E5%A4%A7%E5%B8%B8%E6%95%B0">1. 大常数</a></li>
+<li><a href="#2-%E7%BC%93%E5%AD%98">2. 缓存</a></li>
+<li><a href="#3-%E5%AF%B9%E6%9C%80%E5%9D%8F%E6%83%85%E5%86%B5%E4%B8%8B%E7%9A%84%E6%80%A7%E8%83%BD%E7%9A%84%E4%BF%9D%E8%AF%81">3. 对最坏情况下的性能的保证</a></li>
+<li><a href="#4-%E9%9A%8F%E6%9C%BA%E5%8C%96%E7%AE%97%E6%B3%95">4. 随机化算法</a></li>
+<li><a href="#5-%E5%9D%87%E6%91%8A%E5%88%86%E6%9E%90">5. 均摊分析</a></li>
+</ul>
+</li>
+<li><a href="#threesum">ThreeSum</a><ul>
+<li><a href="#1-threesumslow">1. ThreeSumSlow</a></li>
+<li><a href="#2-threesumbinarysearch">2. ThreeSumBinarySearch</a></li>
+<li><a href="#3-threesumtwopointer">3. ThreeSumTwoPointer</a></li>
+</ul>
+</li>
+<li><a href="#%E5%80%8D%E7%8E%87%E5%AE%9E%E9%AA%8C">倍率实验</a><!-- GFM-TOC --></li>
+</ul>
+</li>
+</ul>
+<h2 id="数学模型"><a href="#数学模型" class="headerlink" title="数学模型"></a>数学模型</h2><h3 id="1-近似"><a href="#1-近似" class="headerlink" title="1. 近似"></a>1. 近似</h3><p>N<sup>3</sup>/6-N<sup>2</sup>/2+N/3 ~ N<sup>3</sup>/6。使用 ~f(N) 来表示所有随着 N 的增大除以 f(N) 的结果趋近于 1 的函数。</p>
+<h3 id="2-增长数量级"><a href="#2-增长数量级" class="headerlink" title="2. 增长数量级"></a>2. 增长数量级</h3><p>N<sup>3</sup>/6-N<sup>2</sup>/2+N/3 的增长数量级为 O(N<sup>3</sup>)。增长数量级将算法与它的具体实现隔离开来，一个算法的增长数量级为 O(N<sup>3</sup>) 与它是否用 Java 实现，是否运行于特定计算机上无关。</p>
+<h3 id="3-内循环"><a href="#3-内循环" class="headerlink" title="3. 内循环"></a>3. 内循环</h3><p>执行最频繁的指令决定了程序执行的总时间，把这些指令称为程序的内循环。</p>
+<h3 id="4-成本模型"><a href="#4-成本模型" class="headerlink" title="4. 成本模型"></a>4. 成本模型</h3><p>使用成本模型来评估算法，例如数组的访问次数就是一种成本模型。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><h3 id="1-大常数"><a href="#1-大常数" class="headerlink" title="1. 大常数"></a>1. 大常数</h3><p>在求近似时，如果低级项的常数系数很大，那么近似的结果是错误的。</p>
+<h3 id="2-缓存"><a href="#2-缓存" class="headerlink" title="2. 缓存"></a>2. 缓存</h3><p>计算机系统会使用缓存技术来组织内存，访问数组相邻的元素会比访问不相邻的元素快很多。</p>
+<h3 id="3-对最坏情况下的性能的保证"><a href="#3-对最坏情况下的性能的保证" class="headerlink" title="3. 对最坏情况下的性能的保证"></a>3. 对最坏情况下的性能的保证</h3><p>在核反应堆、心脏起搏器或者刹车控制器中的软件，最坏情况下的性能是十分重要的。</p>
+<h3 id="4-随机化算法"><a href="#4-随机化算法" class="headerlink" title="4. 随机化算法"></a>4. 随机化算法</h3><p>通过打乱输入，去除算法对输入的依赖。</p>
+<h3 id="5-均摊分析"><a href="#5-均摊分析" class="headerlink" title="5. 均摊分析"></a>5. 均摊分析</h3><p>将所有操作的总成本除于操作总数来将成本均摊。例如对一个空栈进行 N 次连续的 push() 调用需要访问数组的次数为 N+4+8+16+…+2N=5N-4（N 是向数组写入元素的次数，其余都是调整数组大小时进行复制需要的访问数组次数），均摊后访问数组的平均次数为常数。</p>
+<h2 id="ThreeSum"><a href="#ThreeSum" class="headerlink" title="ThreeSum"></a>ThreeSum</h2><p>ThreeSum 用于统计一个数组中和为 0 的三元组数量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ThreeSum</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-ThreeSumSlow"><a href="#1-ThreeSumSlow" class="headerlink" title="1. ThreeSumSlow"></a>1. ThreeSumSlow</h3><p>该算法的内循环为 <code>if (nums[i] + nums[j] + nums[k] == 0)</code> 语句，总共执行的次数为 N(N-1)(N-2) = N<sup>3</sup>/6-N<sup>2</sup>/2+N/3，因此它的近似执行次数为 ~N<sup>3</sup>/6，增长数量级为 O(N<sup>3</sup>)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreeSumSlow</span> <span class="keyword">implements</span> <span class="title">ThreeSum</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = nums.length;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; N; j++) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = j + <span class="number">1</span>; k &lt; N; k++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (nums[i] + nums[j] + nums[k] == <span class="number">0</span>) &#123;</span><br><span class="line">                        cnt++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-ThreeSumBinarySearch"><a href="#2-ThreeSumBinarySearch" class="headerlink" title="2. ThreeSumBinarySearch"></a>2. ThreeSumBinarySearch</h3><p>将数组进行排序，对两个元素求和，并用二分查找方法查找是否存在该和的相反数，如果存在，就说明存在和为 0 的三元组。</p>
+<p>应该注意的是，只有数组不含有相同元素才能使用这种解法，否则二分查找的结果会出错。</p>
+<p>该方法可以将 ThreeSum 算法增长数量级降低为 O(N<sup>2</sup>logN)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreeSumBinarySearch</span> <span class="keyword">implements</span> <span class="title">ThreeSum</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">int</span> N = nums.length;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; N; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> target = -nums[i] - nums[j];</span><br><span class="line">                <span class="keyword">int</span> index = BinarySearch.search(nums, target);</span><br><span class="line">                <span class="comment">// 应该注意这里的下标必须大于 j，否则会重复统计。</span></span><br><span class="line">                <span class="keyword">if</span> (index &gt; j) &#123;</span><br><span class="line">                    cnt++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, h = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= h) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = l + (h - l) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target == nums[m]) &#123;</span><br><span class="line">                <span class="keyword">return</span> m;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; nums[m]) &#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                h = m - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-ThreeSumTwoPointer"><a href="#3-ThreeSumTwoPointer" class="headerlink" title="3. ThreeSumTwoPointer"></a>3. ThreeSumTwoPointer</h3><p>更有效的方法是先将数组排序，然后使用双指针进行查找，时间复杂度为 O(N<sup>2</sup>)。</p>
+<p>同样不适用与数组存在重复元素的情况。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreeSumTwoPointer</span> <span class="keyword">implements</span> <span class="title">ThreeSum</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = nums.length;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N - <span class="number">2</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> l = i + <span class="number">1</span>, h = N - <span class="number">1</span>, target = -nums[i];</span><br><span class="line">            <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">                <span class="keyword">int</span> sum = nums[l] + nums[h];</span><br><span class="line">                <span class="keyword">if</span> (sum == target) &#123;</span><br><span class="line">                    cnt++;</span><br><span class="line">                    l++;</span><br><span class="line">                    h--;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; target) &#123;</span><br><span class="line">                    l++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    h--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="倍率实验"><a href="#倍率实验" class="headerlink" title="倍率实验"></a>倍率实验</h2><p>如果 T(N) ~ aN<sup>b</sup>logN，那么 T(2N)/T(N) ~ 2<sup>b</sup>。</p>
+<p>例如对于暴力的 ThreeSum 算法，近似时间为 ~N<sup>3</sup>/6。进行如下实验：多次运行该算法，每次取的 N 值为前一次的两倍，统计每次执行的时间，并统计本次运行时间与前一次运行时间的比值，得到如下结果：</p>
+<table>
+<thead>
+<tr>
+<th align="center">N</th>
+<th align="center">Time(ms)</th>
+<th align="center">Ratio</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">500</td>
+<td align="center">48</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">1000</td>
+<td align="center">320</td>
+<td align="center">6.7</td>
+</tr>
+<tr>
+<td align="center">2000</td>
+<td align="center">555</td>
+<td align="center">1.7</td>
+</tr>
+<tr>
+<td align="center">4000</td>
+<td align="center">4105</td>
+<td align="center">7.4</td>
+</tr>
+<tr>
+<td align="center">8000</td>
+<td align="center">33575</td>
+<td align="center">8.2</td>
+</tr>
+<tr>
+<td align="center">16000</td>
+<td align="center">268909</td>
+<td align="center">8.0</td>
+</tr>
+</tbody></table>
+<p>可以看到，T(2N)/T(N) ~ 2<sup>3</sup>，因此可以确定 T(N) ~ aN<sup>3</sup>logN。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RatioTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = <span class="number">500</span>;</span><br><span class="line">        <span class="keyword">int</span> loopTimes = <span class="number">7</span>;</span><br><span class="line">        <span class="keyword">double</span> preTime = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (loopTimes-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span>[] nums = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">            StopWatch.start();</span><br><span class="line">            ThreeSum threeSum = <span class="keyword">new</span> ThreeSumSlow();</span><br><span class="line">            <span class="keyword">int</span> cnt = threeSum.count(nums);</span><br><span class="line">            System.out.println(cnt);</span><br><span class="line">            <span class="keyword">double</span> elapsedTime = StopWatch.elapsedTime();</span><br><span class="line">            <span class="keyword">double</span> ratio = preTime == -<span class="number">1</span> ? <span class="number">0</span> : elapsedTime / preTime;</span><br><span class="line">            System.out.println(N + <span class="string">&quot;  &quot;</span> + elapsedTime + <span class="string">&quot;  &quot;</span> + ratio);</span><br><span class="line">            preTime = elapsedTime;</span><br><span class="line">            N *= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StopWatch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> start;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        start = System.currentTimeMillis();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">elapsedTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> now = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">return</span> (now - start) / <span class="number">1000.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/20/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%20-%20%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" data-id="ckvqgc9vc000a5xmdbvog6htt" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/20/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%20-%20%E7%9B%AE%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/20/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%20-%20%E7%AC%A6%E5%8F%B7%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/11/08/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E4%B8%8D%E4%BD%BF%E7%94%A8Redis%E5%81%9A%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9F/">为什么我们不使用Redis做存储数据库？</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/08/%E7%89%A9%E7%90%86%E6%97%A5%E5%BF%97%E4%B8%8E%E9%80%BB%E8%BE%91%E6%97%A5%E5%BF%97/">物理日志与逻辑日志</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/05/MySQL-Binlog%E6%97%A5%E5%BF%97/">MySQL Binlog日志</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/20/MySQL/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/20/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%20-%20%E5%B9%B6%E6%9F%A5%E9%9B%86/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
